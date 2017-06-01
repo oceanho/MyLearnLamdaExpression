@@ -6,6 +6,9 @@ using System.Text;
 
 namespace MyLearnLinq.LinqExpression.Internal
 {
+    /// <summary>
+    /// 位置参数
+    /// </summary>
     internal class LocationFindExpressionVisitor : ExpressionVisitor
     {
         private Expression _expression;

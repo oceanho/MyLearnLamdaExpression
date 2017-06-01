@@ -45,7 +45,7 @@ namespace MyLearnLinq.LinqExpression.Internal
              *  cannot be used for return type 'System.Linq.IQueryable`1[MyLearnLinq.Comunication.PlaceType]'”
              */
             if (isIEnumerable)
-                return placeQueryable.Provider.CreateQuery(myModifiedExpression).AsQueryable();
+                return placeQueryable.Provider.CreateQuery(myModifiedExpression);
             return placeQueryable.Provider.Execute(myModifiedExpression);
         }
         public static TResult Execute<TResult>(Expression expression)

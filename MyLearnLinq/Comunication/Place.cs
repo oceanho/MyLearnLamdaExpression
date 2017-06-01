@@ -20,6 +20,11 @@ namespace MyLearnLinq.Comunication
             State = state;
             PlaceType = placeType;
         }
+
+        public override string ToString()
+        {
+            return $"Name:{Name},State:{State},PlaceType:{PlaceType}";
+        }
     }
 
     public enum PlaceType

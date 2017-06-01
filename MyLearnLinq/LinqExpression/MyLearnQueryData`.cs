@@ -32,12 +32,12 @@ namespace MyLearnLinq.LinqExpression
 
         public IEnumerator GetEnumerator()
         {
-            return Provider.Execute<IEnumerator>(_expression);
+            return Provider.Execute<IEnumerable>(_expression).GetEnumerator();
         }
 
         IEnumerator<TData> IEnumerable<TData>.GetEnumerator()
         {
-            return Provider.Execute<IEnumerator<TData>>(_expression);
+            return Provider.Execute<IEnumerable<TData>>(_expression).GetEnumerator();
         }
     }
 }

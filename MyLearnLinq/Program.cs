@@ -21,11 +21,14 @@ namespace MyLearnLinq
             var terraPlaces = new MyLearnQueryData<Place>();
 
             var query = from place in terraPlaces
-                        where (place.Name == "China" || place.Name == "America") || (place.State == "BeiJing" && place.PlaceType == PlaceType.Island)
-                        select place.PlaceType;
+                            //where (1 == 1) || (place.Name == "China" || place.Name == "America") || (place.State == "BeiJing" && place.PlaceType == PlaceType.Island)
+                        where 1 == 1
+                        select place;
 
-            foreach (PlaceType placeType in query.ToList())
-                Console.WriteLine(placeType);
+            foreach (var place in query.ToList())
+                Console.WriteLine(place.ToString());
+
+            Console.ReadLine();
         }
     }
 }
