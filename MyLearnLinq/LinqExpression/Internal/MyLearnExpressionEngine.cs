@@ -19,10 +19,10 @@ namespace MyLearnLinq.LinqExpression.Internal
 
             var lambdaExpression = (LambdaExpression)((UnaryExpression)(whereExpression.Arguments[1])).Operand;
 
-            // 计算表达式，并替换被计算表达式的结果为一个ConstatExpression（常量表达式）
+            // 计算表达式，并替换被计算表达式的为一个ConstatExpression（常量表达式）结果
             lambdaExpression = (LambdaExpression)Evaluator.PartialEval(lambdaExpression);
 
-            // 获取Where条件中的表达式值，该Vistor通过重写ExpressionVisitor.VisitBinary(BinaryExpression node)获取Where表达式的值
+            // 获取Where条件中的表达式值，该Visitor通过重写ExpressionVisitor.VisitBinary(BinaryExpression node)获取Where表达式的值
             LocationFindExpressionVisitor locationFindVistor = new LocationFindExpressionVisitor(lambdaExpression.Body);
 
             var locations = locationFindVistor.Locations;
